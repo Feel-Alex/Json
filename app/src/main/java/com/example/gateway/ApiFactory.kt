@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiFactory {
 
-    private const val BASE_URL = "http://ws.audioscrobbler.com"
+    private const val BASE_URL = "https://ws.audioscrobbler.com"
 
     val retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())

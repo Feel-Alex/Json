@@ -8,6 +8,7 @@ import com.example.json.R
 import com.example.json.databinding.ActivityMainBinding
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
 
         ApiFactory.apiServise.getArtist(artist = "Cher")
             .subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.newThread())
+            .map {artist ->
+                artist.artist?.url
+            }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 Log.e("MTG", "Subscribe:  ${it}")
