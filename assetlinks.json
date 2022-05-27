@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "ru.kupibilet.debug",
+    "sha256_cert_fingerprints":
+    ["23:E6:A3:AE:76:72:3F:BD:5C:E5:5A:81:02:4E:55:D8:1B:5C:ED:10:AE:A6:67:F7:20:09:DC:C8:8A:32:08:05"]
+  }
+}]
